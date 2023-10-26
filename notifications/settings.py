@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +123,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#cles fcm
+FCM_SERVER_KEY = 'cloud-messaging-ea712-firebase-adminsdk-rwano-86b7ce691f.json'
+import firebase_admin
+from firebase_admin import credentials
+
+cred = credentials.Certificate("./cloud-messaging-ea712-firebase-adminsdk-rwano-86b7ce691f.json")
+firebase_admin.initialize_app(cred)
+
